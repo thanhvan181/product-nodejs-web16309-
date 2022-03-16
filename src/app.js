@@ -3,6 +3,9 @@ import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import productRoute from '../routes/product';
+import postRoute from "../routes/post";
+import userRouter from "../routes/user";
+
 
 const app = express();
 // middleware
@@ -13,7 +16,8 @@ app.use(express.json());
 
 app.use("/api",productRoute);
 
-
+app.use("/api",postRoute);
+app.use("/api", userRouter);
 //route
 
 //connect database
@@ -25,7 +29,7 @@ mongoose.connect('mongodb://localhost:27017/we16309')
 .catch((error) => console.log(error))
 
 
-const PORT = 3001;
+const PORT = 3003;
 app.listen(PORT, () => {
     console.log("Server is running port", PORT);
 })
