@@ -3,8 +3,12 @@
 import User from "../ models/user";
 
 export const signin = async (req, res) => {
+    const filer = {email: req.body.email, password: req.body.password};
     try {
-        const signin = await new User(req.body).save()
+       
+
+        const signin = await User.findOne(filer);
+
          
         // console.log("singin", signin);
 

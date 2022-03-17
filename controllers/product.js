@@ -73,7 +73,7 @@ export const dels =   async (req, res) => {
         res.json({
             message: "Da xoa thanh cong,",
             data: product,
-        });
+        }, []);
 
         
     } catch (error) {

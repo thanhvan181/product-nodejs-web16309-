@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import productRoute from '../routes/product';
 import postRoute from "../routes/post";
 import userRouter from "../routes/user";
+import cateRouter from "../routes/cate"
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use("/api",productRoute);
 
 app.use("/api",postRoute);
 app.use("/api", userRouter);
+app.use("/api", cateRouter);
 //route
 
 //connect database
